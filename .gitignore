@@ -1,4 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.log
+
+/notes
+
+*/design
+
+*/images
+*.txt
 
 # dependencies
 /node_modules

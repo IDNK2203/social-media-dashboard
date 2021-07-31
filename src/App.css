@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul,
+ol {
+  list-style-type: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: hsl(230, 17%, 14%);
   color: white;
 }
+.container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+/* 
+img{
+  max-width: 100%;
+} */
 
-.App-link {
-  color: #61dafb;
+/* Haeder Component styles */
+.header__heading,
+.sm-section__heading {
+  margin: 1rem 0;
+  text-align: left;
+}
+.header__headline {
+  font-size: 1.8rem;
+  padding: 0.25rem 0;
+}
+.header__snippet {
+  font-weight: bold;
+  color: hsl(228, 34%, 66%);
+  padding: 0.25rem 0;
+}
+.toggle-btn-container {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  display: flex;
+  color: hsl(228, 34%, 66%);
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Primary Metrics Card Component Styles */
+.pm-section,
+.sm-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+.pm-section__card {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  width: 100%;
+  background: hsl(228, 28%, 20%);
+  border-radius: 5px;
+  box-shadow: 6px 6px 0px 24px rgba(0, 0, 0, 0.225);
+}
+
+.pm-section__account-data {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pm-section__user {
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+}
+.pm-section__metric-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.pm-section__metric-type {
+  font-weight: light;
+  color: hsl(228, 34%, 66%);
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+.pm-section__metric-differnce {
+  font-weight: bold;
+  display: flex;
+  font-size: 0.9rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0;
+}
+.pm-section__metric-differnce img {
+  padding: 0 0.5rem;
+}
+
+/*Secondary Metric Card Component */
+/*Observations */
+/* card component are have similar 
+layout styles */
+/* headings have similar styles */
+
+.sm-section__headline {
+  font-size: 1.5rem;
+  padding: 0.25rem 0;
+}
+
+.sm-card {
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  width: 100%;
+  background: hsl(228, 28%, 20%);
+  border-radius: 5px;
+  box-shadow: 6px 6px 0px 24px rgba(0, 0, 0, 0.225);
+}
+
+.sm-card__column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: left;
+  font-weight: bold;
+  text-align: left;
+}
+.sm-card__column > * {
+  padding: 0.5rem 0;
+}
+.sm-card__metric-type {
+  color: hsl(228, 34%, 66%);
+}
+.sm-card__metric-value {
+  font-size: 2rem;
+}
+.sm-card__metric-percent {
+  font-size: 0.85rem;
+  display: inline;
 }
