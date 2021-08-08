@@ -19,15 +19,12 @@ body {
   background-color: hsl(230, 17%, 14%);
   color: white;
 }
+
 .container {
   max-width: 1200px;
   padding: 0 1rem;
   margin: 0 auto;
 }
-/* 
-img{
-  max-width: 100%;
-} */
 
 /* Haeder Component styles */
 .header__heading,
@@ -47,10 +44,18 @@ img{
 .toggle-btn-container {
   margin: 0.5rem 0;
   font-weight: bold;
-  display: flex;
   color: hsl(228, 34%, 66%);
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
+.toggle-btn-container label {
+  padding-right: 1rem;
+}
+
+card components BG
+overall BG 
+card metric value
 
 /* Primary Metrics Card Component Styles */
 .pm-section,
@@ -58,6 +63,25 @@ img{
   margin: 2rem 0;
   text-align: center;
 }
+.pm-section__card:hover,
+.sm-card:hover {
+  cursor: pointer;
+  background-color: hsl(228.4, 23.7%, 25.7%);
+}
+
+.pm-section__card[data-account-type="facebook"] {
+  border-top: 3px solid hsl(208, 92%, 53%);
+}
+/* .pm-section__card[data-account-type="twitter"] {
+  border-top: ;
+}
+.pm-section__card[data-account-type="intagram"] {
+  border-top: ;
+}
+.pm-section__card[data-account-type="youtube"] {
+  border-top: ;
+} */
+
 .pm-section__card {
   margin: 2rem 0;
   display: flex;
@@ -65,8 +89,10 @@ img{
   padding: 2rem 0;
   width: 100%;
   background: hsl(228, 28%, 20%);
-  border-radius: 5px;
-  box-shadow: 6px 6px 0px 24px rgba(0, 0, 0, 0.225);
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pm-section__account-data {
@@ -78,9 +104,12 @@ img{
 .pm-section__user {
   padding: 0 0.5rem;
   font-size: 0.9rem;
+  font-weight: bold;
+  color: hsl(228, 34%, 66%);
 }
+
 .pm-section__metric-value {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 .pm-section__metric-type {
@@ -98,6 +127,7 @@ img{
   align-items: center;
   justify-content: center;
   padding: 0.25rem 0;
+  color: hsl(356, 69%, 56%);
 }
 .pm-section__metric-differnce img {
   padding: 0 0.5rem;
@@ -119,11 +149,10 @@ layout styles */
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
-  /* flex-direction: column; */
   width: 100%;
   background: hsl(228, 28%, 20%);
   border-radius: 5px;
-  box-shadow: 6px 6px 0px 24px rgba(0, 0, 0, 0.225);
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
 .sm-card__column {
@@ -135,7 +164,7 @@ layout styles */
   text-align: left;
 }
 .sm-card__column > * {
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
 }
 .sm-card__metric-type {
   color: hsl(228, 34%, 66%);
@@ -146,4 +175,151 @@ layout styles */
 .sm-card__metric-percent {
   font-size: 0.85rem;
   display: inline;
+  color: hsl(356, 69%, 56%);
+}
+
+/* media queries */
+/* Tablet styles */
+/* The min-width property is used to
+ signify a minimum value for which a
+ certain styles should be applied 
+ below this value this styles
+ are not applied */
+
+@media screen and (min-width: 550px) {
+  .header {
+    margin-top: 1.5rem;
+  }
+  .header__container {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .header__container > hr {
+    display: none;
+  }
+  .pm-section {
+    margin-top: 0rem;
+  }
+  .pm-section__cards,
+  .sm__cards {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .pm-section__cards > *,
+  .sm__cards > * {
+    flex: 1 1 48.5%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .pm-section__cards > *,
+  .sm__cards > * {
+    flex: 1 1 22%;
+  }
+}
+
+/* Light Theme Styles  */
+.body--light {
+  background: hsl(0, 0%, 100%);
+}
+
+.pm-section__card--light:hover,
+.sm-card--light:hover {
+  cursor: pointer;
+  background-color: rgb(235, 235, 235);
+}
+.pm-section__card--light,
+.sm-card--light {
+  background-color: hsl(227, 47%, 96%);
+}
+
+.pm-section__user--light,
+.pm-section__metric-type--light,
+.sm-card__metric-type--light {
+  color: hsl(228, 12%, 44%);
+}
+
+.pm-section__metric-value--light,
+.sm-card__metric-value--light {
+  color: hsl(230, 17%, 14%);
+}
+
+.sm-section__headline--light,
+.header__snippet--light {
+  color: hsl(228, 12%, 44%);
+}
+.header__headline--light {
+  color: hsl(230, 17%, 14%);
+}
+
+.toggle-btn__label--ligt {
+  color: hsl(228, 12%, 44%);
+}
+
+/* Toggle Button style */
+
+/* $Lime-Green: hsl(163, 72%, 41%);
+$Bright-Red: hsl(356, 69%, 56%);
+
+// social media icon
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$YouTube: hsl(348, 97%, 39%);
+
+// #### Dark Theme
+
+$Toggle-dark: linear-gradient( 90deg ,hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+
+// #### Light Theme
+
+$Toggle-light: hsl(230, 22%, 74%); */
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 12px;
+  /* background: $Toggle-dark; */
+  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  transition: all 0.4 ease-in-out;
+  position: relative;
+  padding: 0.25rem;
+  box-shadow: inset -2px -2px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+input[type="checkbox"]:focus {
+  outline: 2px dotted grey;
+}
+
+input[type="checkbox"]::before {
+  content: " ";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  /* hsl(230, 17%, 14%) */
+  /* background: $Very-Dark-Blue; */
+  background: hsl(230, 17%, 14%);
+  border-radius: 8px;
+  top: 4px;
+  left: 8%;
+  transition: all 0.4s ease-out;
+}
+input[type="checkbox"]:checked {
+  /* background: $Toggle-light; */
+  background: hsl(230, 22%, 74%);
+  transition: all 0.4s ease-out;
+  box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.55);
+}
+input[type="checkbox"]:checked::before {
+  left: 50%;
+  background: hsl(0, 0%, 100%);
+  transition: all 0.4s ease-out;
 }
